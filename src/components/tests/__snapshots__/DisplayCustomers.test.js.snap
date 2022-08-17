@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Display Customers  should render correctly  1`] = `
+<DocumentFragment>
+  <div
+    style="margin: 20px;"
+  >
+    <div
+      class="row"
+    >
+      <div>
+        No Customers to Display. Please add customers
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

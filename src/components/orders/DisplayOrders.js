@@ -20,7 +20,7 @@ const DisplayOrders = () => {
     return (
         // eslint-disable-next-line
         params.id !== undefined ? (customers.length !== 0 ?<DisplayOrdersConditionally customerProp={[customers.find(c => {  
-            if (c.id === params.id) {
+            if (c.id == params.id) {
                 return [c]; 
             }
 

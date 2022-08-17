@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Display Customers  should render correctly  1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <br />
+    <div
+      class="row"
+      style="margin-left: 20%;"
+    >
+      <div>
+        <span
+          style="font-weight: bold; color: navy;"
+        >
+          John Doe
+        </span>
+        <table
+          class="table-bordered"
+        >
+          <thead
+            style="background-color: black; color: white;"
+          >
+            <tr>
+              <th>
+                Product
+              </th>
+              <th>
+                Quantity
+              </th>
+              <th>
+                Unit Price
+              </th>
+              <th>
+                Total
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            class="table-striped"
+            style="background-color: black; color: white;"
+          >
+            <tr>
+              <td>
+                Speaker
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                20
+              </td>
+              <td>
+                $20
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Bluetooth Device
+              </td>
+              <td>
+                1
+              </td>
+              <td>
+                10
+              </td>
+              <td>
+                $10
+              </td>
+            </tr>
+            <tr>
+              <td
+                colspan="4"
+              >
+                Total: $30
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <br />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -6,11 +6,9 @@ import { deleteCustomer, getCustomerAction } from '../../redux/actions/CustomerA
 const DisplayCustomers = () => {
     const dispatch = useDispatch();
     const customers = useSelector((state) => state.customer.customers);
-    const successMessage = useSelector(state => state.customer.successMessage)
+    //const successMessage = useSelector(state => state.customer.successMessage)
     useEffect(() => {
-        if (customers.length === 0) {
             dispatch(getCustomerAction())
-        }
     },[])
     const handleDeleteClick = (id) => {
         dispatch(deleteCustomer(id))
@@ -24,10 +22,10 @@ const DisplayCustomers = () => {
                         <div className='col md-2' key={customer.id}>
                             <div className='card' style={{ boxShadow: '10px 10px 5px gray' }}>
                                 <div className='card-body' style={{ background: 'linear-gradient(270deg, #c5e6ec 0%, rgb(248 212 248) 100%)' }}>
-                                    <div className='card-title' style={{ fontWeight: 'bold' }}>{customer.fname + " " + customer.lname}</div>
+                                    <div className='card-title' style={{ fontWeight: 'bold' }}><Link to='/' state={{customer}}>{customer.fname + " " + customer.lname}</Link></div>
                                     {customer.city}
                                     <br />
-                                    {customer.ordersList.length > 0 ? <Link to={`/orders/${customer.id}`} style={{ fontWeight: 'bold' }}>View {customer.ordersList.length} Orders</Link> : null}
+                                    <Link to={`/orders/${customer.id}`} style={{ fontWeight: 'bold' }}>View {customer.ordersList.length} Orders</Link>
                                 </div>
                                 <div className='card-footer'>
                                     <button className='btn btn-danger btn-small' onClick={() => handleDeleteClick(customer.id)}>Delete</button>

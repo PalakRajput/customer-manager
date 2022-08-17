@@ -5,6 +5,7 @@ import { GET_CUSTOMER_SUCCESS, CUSTOMER_FAILURE, CREATE_CUSTOMER_SUCCESS, DELETE
 
 export function getCustomerAction() {
     return function (dispatch) {
+        //console.log(axios);
         axios.get("http://localhost:8080/customers/", {
             headers: {
                 "Access-Control-Allow-Origin": "*"
@@ -65,5 +66,28 @@ export function deleteCustomer(id){
                 payload: error
             })
         })
+    }
+}
+
+export function updateCustomer(requestBody, onSuccess) {
+    return function (dispatch) {
+        axios.put("http://localhost:8080/customers/", requestBody, {
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            }
+        })
+            .then(response => {
+                onSuccess()
+                dispatch({
+                    type: CREATE_CUSTOMER_SUCCESS,
+                    payload: response.data
+                })
+            })
+            .catch(error => {
+                dispatch({
+                    type: CUSTOMER_FAILURE,
+                    payload: error
+                })
+            })
     }
 }

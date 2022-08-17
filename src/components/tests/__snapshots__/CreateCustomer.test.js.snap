@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create Customer  should render correctly  1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <div
+      class="row"
+      style="margin-top: 50px;"
+    >
+      <div
+        class="col-2"
+      >
+        <label
+          for="fname"
+          style="font-weight: bold;"
+        >
+           First Name: 
+        </label>
+        <input
+          data-testid="fname"
+          id="fname"
+          placeholder="First Name"
+          style="height: 40px; border-radius: 5px;"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="col-1"
+      />
+      <div
+        class="col-2"
+      >
+        <label
+          for="lname"
+          style="font-weight: bold;"
+        >
+           Last Name: 
+        </label>
+        <input
+          data-testid="lname"
+          id="lname"
+          placeholder="Last Name"
+          style="height: 40px; border-radius: 5px;"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="col-1"
+      />
+      <div
+        class="col-2"
+      >
+        <label
+          for="city"
+          style="font-weight: bold;"
+        >
+           City: 
+        </label>
+        <input
+          data-testid="city"
+          id="city"
+          placeholder="City"
+          style="height: 40px; border-radius: 5px;"
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="col-1"
+      />
+      <div
+        class="col-2"
+      >
+        <br />
+        <button
+          class="btn btn-primary"
+          data-testid="addButton"
+          disabled=""
+          style="align-items: center; height: 40px;"
+        >
+          Add Customer
+        </button>
+      </div>
+    </div>
+    <br />
+  </div>
+</DocumentFragment>
+`;
