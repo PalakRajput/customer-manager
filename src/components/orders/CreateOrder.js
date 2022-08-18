@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { createOrder } from '../../redux/actions/OrderActions';
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { getCustomerAction } from '../../redux/actions/CustomerActions';
-import {Navigate} from 'react-router-dom'
 
 const CreateOrder = () => {
     const [productName, setProductName] = useState("");
@@ -13,17 +12,18 @@ const CreateOrder = () => {
     const dispatch = useDispatch();
     const params = useParams()
     const successMessage = useSelector(state => state.order.successMessage)
+    let navigate = useNavigate()
     const handleClick = () => {
         if ((productName !== "" && productName !== null) && (quantity !== 0) && (unitPrice !== 0.0)) {
             setError("")
             dispatch(createOrder({ pname: productName, quantity, unitPrice, cid:params.cid }, createOrderSuccess));
-            <Navigate to={`/orders/${params.id}`} />
+            
         } else {
             setError("Please enter data in all fields.")
         }
     }
     const createOrderSuccess = () => {
-        //<Navigate to={`/orders/${params.id}`} />
+        navigate(`/orders/${params.cid}`)
         dispatch(getCustomerAction())
         
     }
