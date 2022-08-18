@@ -16,9 +16,10 @@ const DisplayCustomers = () => {
     return (
         <>
             <div style={{margin:'20px'}}>
-                <div className='row'>
+                
 
                     {customers.length !==0 ? (customers.map(customer => (
+                     <div className='row'>
                         <div className='col md-2' key={customer.id}>
                             <div className='card' style={{ boxShadow: '10px 10px 5px gray' }}>
                                 <div className='card-body' style={{ background: 'linear-gradient(270deg, #c5e6ec 0%, rgb(248 212 248) 100%)' }}>
@@ -32,6 +33,7 @@ const DisplayCustomers = () => {
                                 </div>
                             </div>
                         </div>
+                        </div>
                     ))
                     ) : (
                         <div>No Customers to Display. Please add customers</div>
@@ -39,7 +41,7 @@ const DisplayCustomers = () => {
                 }
 
 
-                </div>
+                
             </div>
         </>
     )
