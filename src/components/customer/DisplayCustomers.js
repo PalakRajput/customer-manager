@@ -19,9 +19,10 @@ const DisplayCustomers = () => {
                 
 
                     {customers.length !==0 ? (customers.map(customer => (
+                    <React.Fragment key={customer.id}>
                      <div className='row'>
-                        <div className='col md-2' key={customer.id}>
-                            <div className='card' style={{ boxShadow: '10px 10px 5px gray' }}>
+                        <div className='col md-4 offset-3' >
+                            <div className='card' style={{ boxShadow: '10px 10px 5px gray', maxWidth: '500px' }}>
                                 <div className='card-body' style={{ background: 'linear-gradient(270deg, #c5e6ec 0%, rgb(248 212 248) 100%)' }}>
                                     <div className='card-title' style={{ fontWeight: 'bold' }}><Link to='/' state={{customer}}>{customer.fname + " " + customer.lname}</Link></div>
                                     {customer.city}
@@ -34,6 +35,8 @@ const DisplayCustomers = () => {
                             </div>
                         </div>
                         </div>
+                         <br/>
+                        </React.Fragment>
                     ))
                     ) : (
                         <div>No Customers to Display. Please add customers</div>
