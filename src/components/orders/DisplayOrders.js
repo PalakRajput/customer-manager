@@ -13,19 +13,22 @@ const DisplayOrders = () => {
 
     const params = useParams();
     useEffect(() => {
-        if (customers.length === 0) {
+        //if (customers.length === 0) {
             dispatch(getCustomerAction())
-        }
-    })
+       // }
+    },[dispatch])
     return (
-        // eslint-disable-next-line
-        params.id !== undefined ? (customers.length !== 0 ?<DisplayOrdersConditionally customerProp={[customers.find(c => {  
-            if (c.id == params.id) {
-                return [c]; 
-            }
-
-        })]} /> : null)
-            : <DisplayOrdersConditionally customerProp={customers} />
+        
+            customers.length !== 0 ? // eslint-disable-next-line
+            params.id !== undefined ? (customers.length !== 0 ?<DisplayOrdersConditionally customerProp={[customers.find(c => {  
+                if (c.id == params.id) {
+                    return [c]; 
+                }
+    
+            })]} /> : null)
+                : <DisplayOrdersConditionally customerProp={customers} />
+                : <div>No orders to display. Please add customers and orders for them.</div>
+        
     )
 }
 

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { GET_CUSTOMER_SUCCESS, CUSTOMER_FAILURE, CREATE_CUSTOMER_SUCCESS, DELETE_CUSTOMER } from "./actionTypes";
-
+import { toast } from "react-toastify";
 
 
 export function getCustomerAction() {
@@ -16,6 +16,7 @@ export function getCustomerAction() {
                     type: GET_CUSTOMER_SUCCESS,
                     payload: response.data
                 })
+                toast.success(response.data)
             })
             .catch(error => {
                 dispatch({
@@ -38,6 +39,7 @@ export function createCustomerAction(requestBody) {
                     type: CREATE_CUSTOMER_SUCCESS,
                     payload: response.data
                 })
+                toast.success(response.data)
             })
             .catch(error => {
                 dispatch({
@@ -60,6 +62,7 @@ export function deleteCustomer(id){
                 payload: response.data,
                 id
             })
+            toast.success(response.data)
         }).catch(error => {
             dispatch({
                 type: CUSTOMER_FAILURE,
@@ -82,6 +85,8 @@ export function updateCustomer(requestBody, onSuccess) {
                     type: CREATE_CUSTOMER_SUCCESS,
                     payload: response.data
                 })
+                toast.success(response.data)
+                
             })
             .catch(error => {
                 dispatch({

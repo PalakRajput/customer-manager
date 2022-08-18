@@ -1,5 +1,6 @@
 import axios from "axios"
 import { CREATE_ORDER_SUCCESS, ORDER_FAILURE } from "./actionTypes"
+import { toast } from "react-toastify";
 
 
 export function createOrder(requestBody, onSuccess){
@@ -14,6 +15,7 @@ export function createOrder(requestBody, onSuccess){
                 type: CREATE_ORDER_SUCCESS,
                 payload: response.data
             })
+            toast.success(response.data)
         }).catch(error => {
             dispatch({
                 type: ORDER_FAILURE,

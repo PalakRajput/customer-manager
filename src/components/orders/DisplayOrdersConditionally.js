@@ -13,9 +13,9 @@ const DisplayOrdersConditionally = ({customerProp}) => {
                     
                     {customer.ordersList.length > 0 ?
                         <div>
-                            <span style={{ fontWeight: 'bold', color: 'navy' }}>{customer.fname + " " + customer.lname}</span>
+                            <span className='fullName'>{customer.fname + " " + customer.lname}</span>
                             <table className='table-bordered' >
-                                <thead style={{ backgroundColor: 'black', color: 'white' }}>
+                                <thead>
                                     <tr>
                                         <th>Product</th>
                                         <th>Quantity</th>
@@ -23,7 +23,7 @@ const DisplayOrdersConditionally = ({customerProp}) => {
                                         <th>Total</th>
                                     </tr>
                                 </thead>
-                                <tbody className='table-striped' style={{ backgroundColor: 'black', color: 'white' }}>
+                                <tbody className='table-striped'>
                                     
                                     {customer.ordersList.map(order => (
                                         <tr key={order.oid}>
@@ -33,7 +33,7 @@ const DisplayOrdersConditionally = ({customerProp}) => {
                                             <td>${order.quantity * order.unitPrice}</td>
                                         </tr>
                                     ))}
-                                    <tr ><td colSpan="4" >Total: ${customer.ordersList.reduce((prev, curr) => prev += (curr.quantity*curr.unitPrice),+0)}</td></tr>
+                                    <tr ><td colSpan="4" >${customer.ordersList.reduce((prev, curr) => prev += (curr.quantity*curr.unitPrice),+0)}</td></tr>
                                     {/* {params.id !== undefined ? <tr><a>Add Orders</a></tr> : null} */}
                                 </tbody>
                             </table>

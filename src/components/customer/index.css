@@ -1,0 +1,27 @@
+.inputElement {
+    height: 40px;
+    border-radius: 5px;
+}
+
+.inputLabel {
+    font-weight: bold;
+}
+
+.createCustomerButton {
+    width: max-content;
+    align-items: center;
+    height: 40px
+}
+
+.cardShadow {
+    box-shadow: 10px 10px 5px gray;
+    max-width: 500px
+}
+
+.cardColor {
+    background: linear-gradient(270deg, #c5e6ec 0%, rgb(248 212 248) 100%)
+}
+
+link {
+    font-weight: bold;
+}

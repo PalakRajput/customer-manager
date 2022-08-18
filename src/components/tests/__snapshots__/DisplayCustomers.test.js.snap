@@ -5,12 +5,8 @@ exports[`Display Customers  should render correctly  1`] = `
   <div
     style="margin: 20px;"
   >
-    <div
-      class="row"
-    >
-      <div>
-        No Customers to Display. Please add customers
-      </div>
+    <div>
+      No Customers to Display. Please add customers
     </div>
   </div>
 </DocumentFragment>
